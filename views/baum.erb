@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Learning Database</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+<style>
+		body {background:url(chalkboard.jpg)}
+		title {font-family: 'Cedarville Cursive', cursive;}
+		#border {border: 2px solid black; padding: 0 10px 5px 10px; float: left; width: 550px; border-radius: 10px; margin-left: 0px; background: url(img/chalkboard.jpg)}
+		#border:first-letter { font-weight : bold; font-size: 200%; }
+		.navbar-brand {font-family: 'Cedarville Cursive', cursive; font-size: 200%;}
+		#header {font-family: 'Cedarville Cursive', cursive; font-size: 30px;}
+		#sidebar {margin-right: 0px;}
+		.pull-right{padding: 5px 25px 0 0;}
+
+</style>
+	</head>
+	<body>
+		<div class="intro">
+
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    </button>
+			    <a class="navbar-brand" id="header" href="/">Teacher Resources - Reading</a>
+			  </div>
+			</div>
+
+   
+	</div>
+<div class="container">
+	    
+					<br />
+					<br />
+			
+
+   		<div class="col-md-4" id="border"><font color="white">
+			<form method='get' action='/baum'>
+			  	<option><a href='/rchannels/reading2'>Reading Grade 2</a></option>
+			    <option><a href='/rchannels/reading3'>Reading Grade 3</a></option>
+			    <option><a href='/rchannels/reading4'>Reading Grade 4</a></option>
+
+    			<%= @read4_links[30].text %><br />
+       			<%= @read4_links[31].text %><br />
+    			<%= @read4_links[32].text %><br />
+    			<%= @read4_links[33].text %><br />
+    			<%= @read4_links[34].text %><br />
+    			<%= @read4_links[35].text %><br />
+    			<%= @read4_links[36].text %><br />
+    			<%= @read4_links[37].text %><br />
+    			<%= @read4_links[38].text %><br />
+    			<%= @read4_links[39].text %><br />
+    			<%= @read4_links[40].text %><br />
+    			<%= @read4_links[41].text %><br />
+    			<%= @read4_links[42].text %><br />
+    			<%= @read4_links[43].text %><br />
+    			<%= @read4_links[44].text %><br />
+    			<%= @read4_links[45].text %><br />
+    			<%= @read4_links[46].text %><br />
+    			<%= @read4_links[47].text %><br />
+    			<%= @read4_links[48].text %><br />
+    			<%= @read4_links[49].text %><br /><hr>
+			<% end %>
+		</font>
+					  <input type='submit' />
+			</form>
+		</div>
+
+	</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

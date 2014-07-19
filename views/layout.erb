@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Learning Database</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<style>
+			body {background:url('/chalkboard.jpg');
+				    width: 100%;
+				    height: auto;
+				    -webkit-background-size: cover;
+				    -moz-background-size: cover;
+				    background-size: cover;
+				    -o-background-size: cover;}
+			h3 {color: white;}
+			h4 {color: white;}
+			title {font-family: 'Cedarville Cursive', cursive;}
+			#border {border: 2px solid black; padding: 0 10px 5px 10px; width: 550px; border-radius: 10px; background: url(img/chalkboard.jpg)}
+			#border:first-letter { font-weight : bold; font-size: 200%; }
+			.navbar-brand {font-family: 'Cedarville Cursive', cursive; font-size: 200%;}
+			#header {font-family: 'Cedarville Cursive', cursive; font-size: 30px;}
+			#sidebar {margin-right: 0px;}
+
+		</style>
+	</head>
+	<body>
+		<%= yield %>
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="/vendor/jquery-1.9.1.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  	</body>
+</html>

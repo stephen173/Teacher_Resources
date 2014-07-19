@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Learning Database</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+<style>
+		body {background:url(chalkboard.jpg)}
+
+
+		title {font-family: 'Cedarville Cursive', cursive;}
+		#border {border: 2px solid black; padding: 0 10px 5px 10px; float: left; width: 550px; border-radius: 10px; margin-left: 0px; background: url(img/chalkboard.jpg)}
+		#border:first-letter { font-weight : bold; font-size: 200%; }
+		.navbar-brand {font-family: 'Cedarville Cursive', cursive; font-size: 200%;}
+		#header {font-family: 'Cedarville Cursive', cursive; font-size: 30px;}
+		#sidebar {margin-right: 0px;}
+		.pull-right{padding: 5px 25px 0 0;}
+
+</style>
+	</head>
+	<body>
+		<div class="intro">
+
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    </button>
+			    <a class="navbar-brand" id="header" href="/">Teacher Resources - Reading</a>
+			  </div>
+			</div>
+
+   
+	</div>
+<div class="container">
+	    <div class="col-md-5" id="sidebar">
+	    	<br />
+			<h3><font color="white">What subject are you interested in?</font></h3>
+
+			<form method='get' action='/category'>
+		    <select name='category'>
+	    		<option><a href='/channels/reading'>Reading</a></option>
+	  		</select>
+		  		<input type='submit' />
+			</form>
+			<br />
+
+			<h3><font color="white">Select a grade level.</font></h3>
+			<form method='get' action='/readcategory'>
+			  <select name='readcategory'>
+			  	<option><a href='/rchannels/reading2'>Reading Grade 2</a></option>
+			    <option><a href='/rchannels/reading3'>Reading Grade 3</a></option>
+			    <option><a href='/rchannels/reading4'>Reading Grade 4</a></option>
+			  </select>
+			  <input type='submit' />
+			</form>
+		</div>
+					<br />
+					<br />
+			
+
+   		<div class="col-md-4" id="border"><font color="white">
+			<% if @rchannel == "Choose One" %>Choose One!
+    		<% elsif @rchannel == "Math" %>
+    			<%= @math_links[0].text %>
+    		<% elsif @rchannel == "Reading" %>
+    			<%= @read_links[0].text %>
+    		<% elsif @rchannel == "Reading Grade 2" %>
+    			<%= @read2_links[0].text %><br /><br />
+    			<%= @read2_links[1].text %><br /><br />
+    			<%= @read2_links[2].text %><br /><br />
+    			<%= @read2_links[3].text %><br /><br />
+    			<%= @read2_links[4].text %><br /><hr>
+     			<%= @read2_links[5].text %><br /><br />
+     			<%= @read2_links[6].text %><br /><hr>
+     			<%= @read2_links[7].text %><br /><br />
+	   			<%= @read2_links[8].text %><br /><br />
+
+	   		<% elsif @rchannel == "Reading Grade 3" %>
+    			<%= @read3_links[0].text %><br /><br />
+    			<%= @read3_links[1].text %><br /><hr>
+    			<%= @read3_links[2].text %><br /><br />
+    			<%= @read3_links[3].text %><br /><hr>
+    			<%= @read3_links[4].text %><br /><br />
+    			<%= @read3_links[5].text %><br /><hr>
+    			<%= @read3_links[6].text %><br /><br />
+    			<%= @read3_links[7].text %>
+
+	   		<% elsif @rchannel == "Reading Grade 4" %>
+    			<%= @read4_links[0].text %><br /><br />
+    			<a href="baum.erb" target="_blank">Click here</a> for passage.
+ 	<br /><br />
+
+       			<%= @read4_links[21].text %><br />
+    			<%= @read4_links[22].text %><br /><hr>
+
+ 	    			<%= @read4_links[23].text %><br />
+    			<%= @read4_links[24].text %><br /><hr>
+    			<%= @read4_links[25].text %><br />
+    			<%= @read4_links[26].text %><br /><hr>
+ 	 	       			<%= @read4_links[27].text %><br />
+ 	       			<%= @read4_links[28].text %><br />
+    	
+
+			<% end %>
+		</font>
+		</div>
+<br><br>
+
+	</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

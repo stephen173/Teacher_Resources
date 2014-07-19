@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Learning Database</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+<style>
+	title {font-family: 'Cedarville Cursive', cursive;}
+	.navbar-brand {font-family: 'Cedarville Cursive', cursive;}
+</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			      <span class="sr-only"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="/">    Teacher Resources		
+				</a>
+			  </div>
+			  <div class="navbar-collapse collapse">
+			    <ul class="nav navbar-nav">
+			    </ul>
+			    <ul class="nav navbar-nav navbar-right">
+			        <li class="dropdown">
+			          
+			        <ul class="dropdown-menu">
+			            <li><a href="/login/form">Login</a></li>
+			            <li class="divider"></li>
+			            <li><a href="/logout">Logout</a></li>
+			        </ul>
+			      </li>
+        
+			    </ul>
+			  </div><!--/.nav-collapse -->
+			</div>
+
+   
+	</div>
+	<div class="container">
+	    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+			<h3>What category are you interested in?</h1>
+
+			<form method='get' action='/category'>
+		    <select name='category'>
+	  			<option><a href='/channels/choose_one'>Choose One</a></option>
+	    		<option><a href='/channels/math'>Math</a></option>
+	    		<option><a href='/channels/reading'>Reading</a></option>
+	  		</select>
+		  		<input type='submit' />
+			</form>
+				<br /><br />
+				<h3>What subcategory are you interested in?</h1>
+			<form method='get' action='/subcategory'>
+			  <select name='subcategorycategory'>
+			  	<option><a href='/channels/choose_one'>Choose One</a></option>
+			    <option><a href='/channels/math'>Math</a></option>
+			    <option><a href='/channels/reading'>Reading</a></option>
+			  </select>
+
+			  <input type='submit' />
+			</form>
+	</div>
+    <div class="col-xs-6-offset-4 col-md-4-offset-4" id="border" >
+		<% if @channel == "Math" %>
+    		<%= @math_links[0].text %>
+    		<% elsif @channel == "Reading" %>
+    		<%= @read_links[0].text %>
+
+		<% end %>
+	</div>
+
+
+
+<br><br>
+
+
+
+			</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

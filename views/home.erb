@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Learning Database</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+<style>
+		body {background:url(chalkboard.jpg)}
+
+
+		title {font-family: 'Cedarville Cursive', cursive;}
+		#border {border: 2px solid black; padding: 0 10px 5px 10px; float: left; width: 550px; border-radius: 10px; margin-left: 0px; background: url(img/chalkboard.jpg)}
+		#border:first-letter { font-weight : bold; font-size: 200%; }
+		.navbar-brand {font-family: 'Cedarville Cursive', cursive; font-size: 200%;}
+		#header {font-family: 'Cedarville Cursive', cursive; font-size: 30px;}
+		#sidebar {margin-right: 0px;}
+		.btn {font-family: 'Cedarville Cursive', cursive; font-size: 30px; padding: 3px 5px 3px 5px;}
+
+</style>
+	</head>
+	<body>
+		<div class="intro">
+
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    </button>
+			    <a class="navbar-brand" id="header" href="/">Teacher Resources</a>
+			  </div>
+			</div>
+
+   
+	</div>
+<div class="container">
+	    <div class="col-md-5" id="sidebar">
+	    	<br />
+			<h3><font color="white">What subject are you interested in?</font></h3>
+
+			<form method='get' action='/category'>
+		    <select name='category'>
+	  			<option><a href='/channels/choose_one'>Choose One</a></option>
+	    		<option><a href='/channels/math'>Math</a></option>
+	    		<option><a href='/channels/reading'>Reading</a></option>
+	  		</select>
+		  		<input type='submit' />
+			</form>
+			<br />
+			<% if @channel == "Math" %>
+
+		  <a class="btn btn-default" href="math.erb" role="button" button type="button" >Click for Math Test Prep</button></a>
+		  	<% elsif @channel == "Reading" %>
+		  <a class="btn btn-default" href="reading.erb" role="button" button type="button" class="btn btn-primary btn-lg">Click for Reading Test Prep</button></a>
+			<% end %>
+		</div>
+					<br />
+					<br />
+			
+   		<div class="col-md-4" id="border"><font color="white">
+			<% if @channel == "Choose One" %>Choose One!
+    		<% elsif @channel == "Math" %>
+    			<%= @math_links[0].text %>
+    		<% elsif @channel == "Reading" %>
+    			<%= @read_links[0].text %>
+			<% end %>
+		</font>
+		</div>
+
+<br><br>
+
+
+
+	</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
